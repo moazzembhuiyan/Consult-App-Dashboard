@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Consultie Admin Dashboard
+
+An admin dashboard for managing consultation platform operations. The application is built with Next.js and provides tools for reviewing platform activity, managing users and bookings, and updating administrative settings.
+
+## Features
+
+- Dashboard metrics and analytics
+- Account, booking, earnings, and transaction management
+- Content moderation and reported-content review
+- Category, subscription, and withdrawal management
+- Authentication and account settings
+- API data fetching and state management with Redux Toolkit Query
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) 16 with the App Router
+- [React](https://react.dev/) 18
+- [TypeScript](https://www.typescriptlang.org/)
+- [Ant Design](https://ant.design/) and [Tailwind CSS](https://tailwindcss.com/)
+- [Redux Toolkit](https://redux-toolkit.js.org/) and RTK Query
+- [React Hook Form](https://react-hook-form.com/) with [Zod](https://zod.dev/) validation
+
+## Requirements
+
+- Node.js (use an active LTS release)
+- npm
+- Access to the dashboard API
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   ```bash
+   npm install
+   ```
+
+2. Create or update the root `.env` file and set the API base URL:
+
+   ```env
+   NEXT_PUBLIC_BASE_URL=https://your-api-host
+   ```
+
+   Replace the example URL with the API environment you intend to use. Do not commit credentials or other secrets to source control. Because this variable is prefixed with `NEXT_PUBLIC_`, its value is available to client-side code and must not contain secrets.
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3008](http://localhost:3008).
+
+## Available Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server on port 3008 with Turbopack. |
+| `npm run build` | Create an optimized production build. |
+| `npm run start` | Start the production server. Run `npm run build` first. |
+| `npm run lint` | Run the configured Next.js lint command. |
+| `npm run typecheck` | Check the TypeScript project without generating output. |
+
+## Project Structure
+
+```text
+src/
+├── app/          # App Router pages and route-specific components
+├── components/   # Shared UI components
+├── lib/          # Application-level providers
+├── redux/        # Redux store, slices, and API services
+├── schema/       # Form validation schemas
+├── theme/        # UI theme configuration
+└── utils/        # Shared utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Production Build
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Build and start the application with:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The production server uses Next.js's default port unless configured otherwise. Make sure the API URL is configured for the target environment before building and deploying.
