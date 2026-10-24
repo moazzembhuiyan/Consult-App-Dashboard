@@ -6,24 +6,28 @@ import {
   FormProvider,
   useForm,
   type FieldValues,
+  type DefaultValues,
   type Resolver,
+  type SubmitHandler,
 } from "react-hook-form";
 import type { ReactNode } from "react";
 
-type FormWrapperProps = {
-  onSubmit?: (data: FieldValues) => void;
+type FormWrapperProps<
+  TFieldValues extends FieldValues,
+> = {
+  onSubmit?: SubmitHandler<TFieldValues>;
   children: ReactNode;
-  defaultValues?: FieldValues;
-  resolver?: Resolver<FieldValues>;
+  defaultValues?: DefaultValues<TFieldValues>;
+  resolver?: Resolver<any, any>;
 };
 
-export default function FormWrapper({
+export default function FormWrapper<TFieldValues extends FieldValues = FieldValues>({
   onSubmit,
   children,
   defaultValues,
   resolver,
-}: FormWrapperProps) {
-  const methods = useForm<FieldValues>({ defaultValues, resolver });
+}: FormWrapperProps<TFieldValues>) {
+  const methods = useForm<TFieldValues>({ defaultValues, resolver });
 
   useEffect(() => {
     if (defaultValues) {
@@ -32,7 +36,7 @@ export default function FormWrapper({
     }
   }, [defaultValues, methods]);
 
-  const handleSubmit = (data: FieldValues) => {
+  const handleSubmit: SubmitHandler<TFieldValues> = (data) => {
     onSubmit?.(data);
     methods.reset();
   };
