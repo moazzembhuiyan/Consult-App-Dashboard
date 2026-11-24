@@ -1,85 +1,136 @@
-# Consultie Admin Dashboard
+<div align="center">
 
-An admin dashboard for managing consultation platform operations. The application is built with Next.js and provides tools for reviewing platform activity, managing users and bookings, and updating administrative settings.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,50:1E3A8A,100:38BDF8&height=180&section=header&text=Consultie%20Admin&fontSize=40&fontColor=ffffff&fontAlignY=36&desc=Consultation%20platform%20dashboard&descAlignY=58&descSize=16" alt="Consultie Admin" />
 
-## Features
+<p><b>📊 Admin Dashboard</b></p>
 
-- Dashboard metrics and analytics
-- Account, booking, earnings, and transaction management
-- Content moderation and reported-content review
-- Category, subscription, and withdrawal management
-- Authentication and account settings
-- API data fetching and state management with Redux Toolkit Query
+<p>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Ant_Design-0170FE?style=for-the-badge&logo=antdesign&logoColor=white" alt="Ant Design" />
+  <img src="https://img.shields.io/badge/Redux_Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux Toolkit" />
+  <img src="https://img.shields.io/badge/Recharts-22B5BF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Recharts" />
+  <img src="https://img.shields.io/badge/React_Hook_Form-EC5990?style=for-the-badge&logo=reacthookform&logoColor=white" alt="React Hook Form" />
+</p>
 
-## Tech Stack
+</div>
 
-- [Next.js](https://nextjs.org/) 16 with the App Router
-- [React](https://react.dev/) 18
-- [TypeScript](https://www.typescriptlang.org/)
-- [Ant Design](https://ant.design/) and [Tailwind CSS](https://tailwindcss.com/)
-- [Redux Toolkit](https://redux-toolkit.js.org/) and RTK Query
-- [React Hook Form](https://react-hook-form.com/) with [Zod](https://zod.dev/) validation
+## 📖 Overview
 
-## Requirements
+An admin dashboard for the **Consultie** consultation platform. It gives admins tools to monitor platform activity, manage users and bookings, handle payments and withdrawals, and moderate content.
 
-- Node.js (use an active LTS release)
-- npm
-- Access to the dashboard API
+## ✨ Key Features
 
-## Getting Started
+### 📈 Insights
 
-1. Install dependencies:
+- Dashboard metrics & analytics reporting
+- Earnings and transaction tracking
 
-   ```bash
-   npm install
-   ```
+### 🗂️ Management
 
-2. Create or update the root `.env` file and set the API base URL:
+- Accounts & booking details
+- Categories and subscription plans
+- Withdrawal management
+- Payments & transactions
 
-   ```env
-   NEXT_PUBLIC_BASE_URL=https://your-api-host
-   ```
+### 🛡️ Moderation
 
-   Replace the example URL with the API environment you intend to use. Do not commit credentials or other secrets to source control. Because this variable is prefixed with `NEXT_PUBLIC_`, its value is available to client-side code and must not contain secrets.
+- Content moderation & reported content review
+- Complaints / feedback handling
 
-3. Start the development server:
+### ⚙️ Settings
 
-   ```bash
-   npm run dev
-   ```
+- General settings, profile & notifications
+- About / Privacy / Terms editors
+- Secure auth — login, OTP, password recovery
 
-4. Open [http://localhost:3008](http://localhost:3008).
+## 🛠️ Tech Stack
 
-## Available Scripts
+| Category | Technology |
+|---|---|
+| **Framework** | Next.js 16 (App Router) |
+| **Language** | TypeScript |
+| **UI** | Ant Design · Tailwind CSS |
+| **State & API** | Redux Toolkit · RTK Query · Redux Persist |
+| **Forms** | React Hook Form · Zod |
+| **Charts** | Recharts |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm
+
+### Installation
+
+```bash
+git clone https://github.com/moazzembhuiyan/consult-app-dashboard.git
+cd consult-app-dashboard
+npm install
+```
+
+### Environment Variables
+
+Create a `.env.local` file in the project root:
+
+```env
+NEXT_PUBLIC_BASE_URL=
+```
+
+| Variable | Description |
+|---|---|
+| `NEXT_PUBLIC_BASE_URL` | Backend API base URL |
+
+### Run
+
+```bash
+npm run dev
+# open http://localhost:3000
+```
+
+## 📜 Available Scripts
 
 | Command | Description |
-| --- | --- |
-| `npm run dev` | Start the development server on port 3008 with Turbopack. |
-| `npm run build` | Create an optimized production build. |
-| `npm run start` | Start the production server. Run `npm run build` first. |
-| `npm run lint` | Run the configured Next.js lint command. |
-| `npm run typecheck` | Check the TypeScript project without generating output. |
+|---|---|
+| `npm run dev` | Start the development server |
+| `npm run build` | Create a production build |
+| `npm run start` | Run the production build |
+| `npm run lint` | Run ESLint |
+| `npm run typecheck` | Run TypeScript type checking |
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 src/
-├── app/          # App Router pages and route-specific components
-├── components/   # Shared UI components
-├── lib/          # Application-level providers
-├── redux/        # Redux store, slices, and API services
-├── schema/       # Form validation schemas
-├── theme/        # UI theme configuration
-└── utils/        # Shared utility functions
+├── app/
+│   ├── (Auth)/          # Login, forgot password, OTP, set new password
+│   └── admin/           # Protected admin pages
+├── components/          # Reusable UI components
+├── redux/               # Store, API slices (RTK Query) & state
+├── schema/              # Zod validation schemas
+├── theme/               # Ant Design theme config
+├── lib/ · utils/        # Helpers & utilities
+└── middleware.ts       # Route protection
 ```
 
-## Production Build
+## 📝 More Documentation
 
-Build and start the application with:
+Detailed developer notes are available in [`docs/NOTES.md`](docs/NOTES.md).
 
-```bash
-npm run build
-npm run start
-```
+---
 
-The production server uses Next.js's default port unless configured otherwise. Make sure the API URL is configured for the target environment before building and deploying.
+<div align="center">
+
+### 👨‍💻 Developed by [Moazzem Hossen Bhuiyan](https://github.com/moazzembhuiyan)
+
+<sub>Mobile App Developer (React Native) • Web Developer</sub>
+
+<p>
+  <a href="https://github.com/moazzembhuiyan"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
+  <a href="https://www.linkedin.com/in/moazzem-hossen-bhuiyan-325432331/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="mailto:moazzembhuiyan394@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
+</p>
+
+<sub>⭐ If you like this project, consider giving it a star!</sub>
+
+</div>
