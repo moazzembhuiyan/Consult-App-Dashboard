@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,50:1E3A8A,100:38BDF8&height=180&section=header&text=Consultie%20Admin&fontSize=40&fontColor=ffffff&fontAlignY=36&desc=Consultation%20platform%20dashboard&descAlignY=58&descSize=16" alt="Consultie Admin" />
+<img src=".github/banner.svg" width="100%" alt="Consultie Admin — Consultation platform dashboard" />
 
 <p><b>📊 Admin Dashboard</b></p>
 
